@@ -57,6 +57,7 @@ const getStudent = async function (req, res) {
     try {
         const presentUser = req.presentUser
         const obj = {
+            name: presentUser.name,
             subject: presentUser.subject,
             marks: presentUser.marks
         }
@@ -83,6 +84,7 @@ const updateMarks = async function (req, res) {
 
         let updatedMarks = await userModel.findByIdAndUpdate({ _id: userId }, { $set: { marks: marks } }, { new: true })
         let obj = {
+            name: updatedMarks.name,
             subject: updatedMarks.subject,
             marks: updatedMarks.marks
         }
