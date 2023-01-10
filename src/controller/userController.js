@@ -101,4 +101,5 @@ const deleteStudent = async function (req, res) {
         return res.status(500).send({ status: false, message: error.message })
     }
 }
+
 module.exports = { createUser, loginUser, getStudent, updateMarks, deleteStudent }
